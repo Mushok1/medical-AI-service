@@ -15,6 +15,7 @@ class Document(Base):
     filename: Mapped[str] = mapped_column(String(255), nullable=False)
     content_type: Mapped[str] = mapped_column(String(255), nullable=False)
     input_uri: Mapped[str] = mapped_column(String(500), nullable=False)
+    output_uri: Mapped[str | None] = mapped_column(String(500), nullable=True)
     status: Mapped[DocumentStatus] = mapped_column(
         Enum(DocumentStatus, name="document_status"), nullable=False, default=DocumentStatus.QUEUED
     )
