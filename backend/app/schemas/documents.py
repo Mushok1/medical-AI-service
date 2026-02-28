@@ -10,6 +10,7 @@ class UploadDocumentResponse(BaseModel):
     job_id: UUID
     filename: str
     content_type: str
+    input_uri: str
     status: DocumentStatus = DocumentStatus.QUEUED
     created_at: datetime
 
